@@ -175,6 +175,8 @@ Create environment variables for database configuration.
   value: {{ .Values.keycloak.persistence.dbPort | quote }}
 - name: DB_DATABASE
   value: {{ .Values.keycloak.persistence.dbName | quote }}
+- name: JDBC_PARAMS
+  value: {{ .Values.keycloak.persistence.jdbcParams | quote }}
 - name: DB_USER
   valueFrom:
     secretKeyRef:

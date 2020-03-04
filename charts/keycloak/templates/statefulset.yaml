@@ -84,10 +84,10 @@ spec:
             {{- tpl . $ | nindent 12 }}
           {{- end }}
           env:
-            - name: KEYCLOAK_USER
-              value: {{ .Values.keycloak.username }}
-            - name: KEYCLOAK_PASSWORD_FILE
-              value: /secrets/{{ include "keycloak.passwordKey" . }}
+#            - name: KEYCLOAK_USER
+#              value: {{ .Values.keycloak.username }}
+#            - name: KEYCLOAK_PASSWORD_FILE
+#              value: /secrets/{{ include "keycloak.passwordKey" . }}
           {{- if $highAvailability }}
             - name: JGROUPS_DISCOVERY_PROTOCOL
               value: {{ .Values.keycloak.jgroups.discoveryProtocol }}
