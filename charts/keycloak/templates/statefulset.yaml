@@ -84,6 +84,8 @@ spec:
             {{- tpl . $ | nindent 12 }}
           {{- end }}
           env:
+            - name: KEYCLOAK_FRONTEND_URL
+              value: "https://rhtools.efotile.com"
             - name: PROXY_ADDRESS_FORWARDING
               value: "true"
           {{- if $highAvailability }}
