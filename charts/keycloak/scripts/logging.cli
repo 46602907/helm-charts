@@ -1,6 +1,6 @@
 # Allow log level to be configured via environment variable
-/subsystem=logging/console-handler=CONSOLE:write-attribute(name=level, value=${env.WILDFLY_LOGLEVEL:DEBUG})
-/subsystem=logging/root-logger=ROOT:write-attribute(name=level, value=${env.WILDFLY_LOGLEVEL:DEBUG})
+/subsystem=logging/console-handler=CONSOLE:write-attribute(name=level, value=${env.WILDFLY_LOGLEVEL:INFO})
+/subsystem=logging/root-logger=ROOT:write-attribute(name=level, value=${env.WILDFLY_LOGLEVEL:INFO})
 
 # Add dedicated eventsListener config element to allow configuring elements.
 /subsystem=keycloak-server/spi=eventsListener:add()
