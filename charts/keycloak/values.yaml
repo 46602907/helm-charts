@@ -342,7 +342,7 @@ test:
 prometheus:
   operator:
     ## Are you using Prometheus Operator?
-    enabled: true
+    enabled: false
 
     serviceMonitor:
       ## Optionally set a target namespace in which to deploy serviceMonitor
