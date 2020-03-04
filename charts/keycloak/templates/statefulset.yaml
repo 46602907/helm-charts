@@ -84,6 +84,8 @@ spec:
             {{- tpl . $ | nindent 12 }}
           {{- end }}
           env:
+            - name: PROXY_ADDRESS_FORWARDING
+              value: true
 #            - name: KEYCLOAK_USER
 #              value: {{ .Values.keycloak.username }}
 #            - name: KEYCLOAK_PASSWORD_FILE
