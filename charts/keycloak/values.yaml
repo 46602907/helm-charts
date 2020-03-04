@@ -24,7 +24,7 @@ keycloak:
 
   image:
     repository: jboss/keycloak
-    tag: 8.0.1
+    tag: 9.0.0
     pullPolicy: IfNotPresent
 
     ## Optionally specify an array of imagePullSecrets.
@@ -283,12 +283,12 @@ keycloak:
     deployPostgres: false
 
     # The database vendor. Can be either "postgres", "mysql", "mariadb", or "h2"
-    dbVendor: h2
+    dbVendor: mysql
 
     ## The following values only apply if "deployPostgres" is set to "false"
-    dbName: keycloak
-    dbHost: mykeycloak
-    dbPort: 5432
+    dbName: new_keycloakds
+    dbHost: rm-uf6mq85b3hxwnjqh8ko.mysql.rds.aliyuncs.com
+    dbPort: 3306
 
     ## Database Credentials are loaded from a Secret residing in the same Namespace as keycloak.
     ## The Chart can read credentials from an existing Secret OR it can provision its own Secret.
@@ -302,8 +302,8 @@ keycloak:
     ## Provision new Secret
     # Only used if existingSecret is not specified. In this case a new secret is created
     # populated by the variables below.
-    dbUser: keycloak
-    dbPassword: ""
+    dbUser: onlinefotile
+    dbPassword: w-mlH9B#GLU+uU=h
 
 postgresql:
   ### PostgreSQL User to create.
@@ -328,7 +328,7 @@ postgresql:
     enabled: false
 
 test:
-  enabled: true
+  enabled: false
   image:
     repository: unguiculus/docker-python3-phantomjs-selenium
     tag: v1
@@ -342,11 +342,11 @@ test:
 prometheus:
   operator:
     ## Are you using Prometheus Operator?
-    enabled: false
+    enabled: true
 
     serviceMonitor:
       ## Optionally set a target namespace in which to deploy serviceMonitor
-      namespace: ""
+      namespace: "cattle-prometheus"
 
       ## Additional labels to add to the ServiceMonitor so it is picked up by the operator.
       ## If using the [Helm Chart](https://github.com/helm/charts/tree/master/stable/prometheus-operator) this is the name of the Helm release.
