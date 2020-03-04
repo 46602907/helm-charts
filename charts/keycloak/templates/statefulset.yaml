@@ -85,11 +85,7 @@ spec:
           {{- end }}
           env:
             - name: PROXY_ADDRESS_FORWARDING
-              value: true
-#            - name: KEYCLOAK_USER
-#              value: {{ .Values.keycloak.username }}
-#            - name: KEYCLOAK_PASSWORD_FILE
-#              value: /secrets/{{ include "keycloak.passwordKey" . }}
+              value: "true"
           {{- if $highAvailability }}
             - name: JGROUPS_DISCOVERY_PROTOCOL
               value: {{ .Values.keycloak.jgroups.discoveryProtocol }}
