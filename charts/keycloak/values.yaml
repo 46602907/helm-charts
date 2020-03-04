@@ -346,7 +346,7 @@ prometheus:
 
     serviceMonitor:
       ## Optionally set a target namespace in which to deploy serviceMonitor
-      namespace: "cattle-prometheus"
+      namespace: ""
 
       ## Additional labels to add to the ServiceMonitor so it is picked up by the operator.
       ## If using the [Helm Chart](https://github.com/helm/charts/tree/master/stable/prometheus-operator) this is the name of the Helm release.
