@@ -85,7 +85,7 @@ spec:
           {{- end }}
           env:
             - name: KEYCLOAK_FRONTEND_URL
-              value: "https://rhtools.efotile.com"
+              value: "https://rhtools.efotile.com/auth/"
             - name: PROXY_ADDRESS_FORWARDING
               value: "true"
           {{- if $highAvailability }}
